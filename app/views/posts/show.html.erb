@@ -11,5 +11,16 @@
 </p>
 
 
+<div class="comment">
+  <% @post.comments.each do |c| %>
+    <p><%= c.body %></p>
+    <div class="reply">
+      <% c.replies.each do |r| %>
+        <p><%= r.body %></p>
+      <% end %>
+    </div>
+  <% end %>
+</div>
+
 <%= link_to 'Edit', edit_post_path(@post) %> |
 <%= link_to 'Back', posts_path %>
