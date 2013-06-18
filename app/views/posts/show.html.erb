@@ -10,9 +10,10 @@
   <%= @post.body %>
 </p>
 
+<%= paginate @comments %>
 
 <div class="comment">
-  <% @post.comments.each do |c| %>
+  <% @comments.each do |c| %>
     <p><%= c.body %></p>
     <div class="reply">
       <% c.replies.each do |r| %>
